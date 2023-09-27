@@ -1,5 +1,14 @@
 import { gql } from "@apollo/client";
 
+export const getSiteInfo = gql`
+  query GetSiteInfo {
+    generalSettings {
+      description
+      title
+    }
+  }
+`;
+
 export const getMenu = gql`
   query getMenu {
     menuItems(where: { location: PRIMARY, parentId: "0" }) {

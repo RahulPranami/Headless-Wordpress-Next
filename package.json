@@ -27,6 +27,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "graphql": "^16.8.1",
+    "he": "^1.2.0",
     "lucide-react": "^0.279.0",
     "next": "latest",
     "next-themes": "^0.2.1",

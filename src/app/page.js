@@ -12,7 +12,7 @@ export default async function Home() {
     },
   });
 
-  console.log(data);
+  // console.log(data);
   if (loading) {
     return <p>Loading...</p>;
   }
