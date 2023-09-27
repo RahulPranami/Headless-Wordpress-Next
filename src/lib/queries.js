@@ -40,6 +40,7 @@ export const getPosts = gql`
   query getPosts($first: Int!, $after: String) {
     posts(after: $after, first: $first) {
       pageInfo {
+        hasPreviousPage
         hasNextPage
         endCursor
       }
@@ -48,7 +49,20 @@ export const getPosts = gql`
           id
           databaseId
           title
+          excerpt
+          uri
+          date
         }
+      }
+    }
+  }
+`;
+
+export const getEndCursor = gql`
+  query getEndCursor($after: String = "", $first: Int!) {
+    posts(after: $after, first: $first) {
+      pageInfo {
+        endCursor
       }
     }
   }
