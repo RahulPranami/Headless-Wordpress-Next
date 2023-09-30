@@ -67,3 +67,103 @@ export const getEndCursor = gql`
     }
   }
 `;
+
+export const getPost = gql`
+  query getPost($id: ID!) {
+    post(id: $id, idType: URI) {
+      author {
+        node {
+          name
+          uri
+          slug
+          avatar {
+            default
+            foundAvatar
+            height
+            size
+            url
+            width
+          }
+        }
+      }
+      content
+      categories {
+        edges {
+          node {
+            count
+            name
+            slug
+            uri
+          }
+        }
+      }
+      comments {
+        edges {
+          node {
+            author {
+              node {
+                name
+                ... on CommentAuthor {
+                  id
+                  email
+                }
+              }
+            }
+            content
+          }
+          cursor
+        }
+      }
+      date
+      dateGmt
+      contentTypeName
+      enqueuedScripts {
+        edges {
+          node {
+            args
+            src
+            handle
+            extra
+            id
+            dependencies {
+              args
+              extra
+              handle
+              id
+              src
+            }
+          }
+        }
+      }
+      featuredImageDatabaseId
+      featuredImageId
+      featuredImage {
+        node {
+          fileSize
+          link
+          mediaItemUrl
+          slug
+          uri
+          title
+          srcSet
+          sourceUrl
+          altText
+        }
+      }
+      slug
+      uri
+      title
+      tags {
+        edges {
+          node {
+            count
+            name
+            link
+            slug
+            uri
+          }
+        }
+      }
+    }
+  }
+`;
