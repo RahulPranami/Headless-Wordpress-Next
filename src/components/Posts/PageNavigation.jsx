@@ -1,9 +1,6 @@
-import React from "react";
-
 export default function PageNavigation({ page, hasNext, hasPrev }) {
-  if (page <= 1) {
-    hasPrev = false;
-  }
+  hasPrev = page <= 1 ? false : hasPrev;
+
   return (
     <div className="w-full px-4 pt-10">
       {hasPrev && (

@@ -2,6 +2,7 @@ import { client } from "@/lib/apollo";
 import { getEndCursor, getPosts } from "@/lib/queries";
 import PageNavigation from "./PageNavigation";
 import Post from "./Post";
+import { Skeleton } from "../ui/skeleton";
 
 export default async function Posts({ pageNo = 1 }) {
   const page = parseInt(pageNo);
@@ -21,6 +22,10 @@ export default async function Posts({ pageNo = 1 }) {
         first: postsCount,
       },
     });
+
+    if (cursorLoading) {
+      return <Skeleton />;
+    }
 
     endCursor = posts.pageInfo.endCursor;
   }
@@ -42,7 +47,7 @@ export default async function Posts({ pageNo = 1 }) {
   });
 
   if (postsLoading) {
-    return <div>Loading ... </div>;
+    return <Skeleton />;
   }
 
   return (
