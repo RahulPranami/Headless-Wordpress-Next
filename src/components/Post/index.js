@@ -23,7 +23,7 @@ export default async function Post({ uri }) {
     <>
       <div className="flex flex-col items-center justify-between px-24">
         <div className="mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-          <h1 className={`text-3xl text-center pb-10 ${lobster.className}`}>
+          <h1 className={`text-3xl text-center pb-10 font-lobster`}>
             {post.title}
           </h1>
 

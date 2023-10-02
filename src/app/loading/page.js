@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { Inter, Cookie } from "next/font/google";
 import { client } from "@/lib/apollo";
 import { getPosts } from "@/lib/queries";
-
-const cookie = Cookie({ subsets: ["latin"], weight: "400" });
 
 export default async function Home() {
   return (
@@ -17,9 +14,7 @@ export default async function Home() {
 
 export function LoadingComponent3() {
   return (
-    <div
-      className={`${cookie.className} flex min-h-screen items-center justify-center text-5xl tracking-widest`}
-    >
+    <div className="font-sedgwick flex min-h-screen items-center justify-center text-5xl tracking-widest">
       <span className="delay-0 duration-1000 animate-bounce"> L </span>
       <span className="delay-75 duration-1000 animate-bounce"> O </span>
       <span className="delay-100 duration-1000 animate-bounce"> A </span>
@@ -27,9 +22,9 @@ export function LoadingComponent3() {
       <span className="delay-200 duration-1000 animate-bounce"> I </span>
       <span className="delay-300 duration-1000 animate-bounce"> N </span>
       <span className="delay-500 duration-1000 animate-bounce"> G </span>
-      <span className="delay-0 duration-1000 animate-bounce"> . </span>
-      <span className="delay-75 duration-1000 animate-bounce"> . </span>
-      <span className="delay-150 duration-1000 animate-bounce"> . </span>
+      <span className="delay-0 duration-700 animate-bounce"> . </span>
+      <span className="delay-75 duration-700 animate-bounce"> . </span>
+      <span className="delay-150 duration-700 animate-bounce"> . </span>
     </div>
   );
 }

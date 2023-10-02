@@ -11,14 +11,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-function NavbarItem({ item, link }) {
+function NavbarItem({ item, link, className }) {
   return (
-    <NavigationMenuItem>
+    <NavigationMenuItem className={className}>
       {item?.childItems?.edges.length > 0 ? (
         <>
           <NavigationMenuTrigger>
             <Link href={link} legacyBehavior passHref>
-              <NavigationMenuLink>{item.label}</NavigationMenuLink>
+              <NavigationMenuLink className={className}>{item.label}</NavigationMenuLink>
             </Link>
           </NavigationMenuTrigger>
 
@@ -36,7 +36,7 @@ function NavbarItem({ item, link }) {
         </>
       ) : (
         <Link href={link} legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${className}`}>
             {item.label}
           </NavigationMenuLink>
         </Link>
@@ -54,6 +54,7 @@ export default function Navbar({ menuItems, className }) {
             key={item.node.id}
             item={item.node}
             link={item.node.uri}
+            className={className}
           />
         ))}
       </NavigationMenuList>

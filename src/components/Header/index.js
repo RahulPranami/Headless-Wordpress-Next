@@ -26,20 +26,20 @@ export default async function Header() {
   });
 
   return (
-    <header className="sm:flex sm:justify-between py-3 px-4 border-b">
+    <header className="sm:flex sm:justify-between py-3 px-4 border-b font-lobster">
       <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between w-full">
-        <div className={`flex items-center ${lobster.className}`}>
+        <div className="flex items-center">
           <Link href="/" className="ml-4 lg:ml-0">
-            <h1 className="text-xl font-bold">
+            <h1 className="text-3xl font-bold">
               {he.decode(title) || "Headless Wordpress"}
             </h1>
-            <p className="text-xs">
+            <p className="text-sm">
               {he.decode(description) || "Just another Site"}
             </p>
           </Link>
         </div>
-        <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 hidden md:block">
-          <Navbar menuItems={menuItems.edges} className={lobster.className} />
+        <nav className="mx-6 flex items-center space-x-4 lg:space-x-6 md:block">
+          <Navbar menuItems={menuItems.edges} className="text-xl"/>
         </nav>
         <div className="flex items-center">
           <ThemeSwitcher />

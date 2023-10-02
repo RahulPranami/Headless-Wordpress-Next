@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
-	],
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -51,6 +51,21 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        cookie: ["Cookie"],
+        lobster: ["Lobster"],
+        playball: ["Playball"],
+        puppies: ["Puppies Play"],
+        sedgwick: ["Sedgwick Ave Display"],
+
+        // font-family: 'Cookie', cursive;
+        // font-family: 'Lobster', cursive;
+        // font-family: 'Lobster Two', cursive;
+        // font-family: 'Playball', cursive;
+        // font-family: 'Puppies Play', cursive;
+        // font-family: 'Sedgwick Ave Display', cursive;
+        // font-family: 'Young Serif', serif;
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -73,4 +88,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
