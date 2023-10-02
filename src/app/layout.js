@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter, Cookie } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 const cookie = Cookie({ subsets: ["latin"], weight: "400" });
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
